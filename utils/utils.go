@@ -35,6 +35,21 @@ func CloneIntArray(a []int) []int {
 	return b
 }
 
+func AbsInt(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
+}
+
+func MinInt(a, b int) int {
+	if a < b {
+		return a
+	}
+
+	return b
+}
+
 func LoadIntFile(path string) []int {
 	file, err := os.Open(path)
 	if err != nil {
@@ -55,4 +70,13 @@ func LoadIntFile(path string) []int {
 	}
 
 	return out
+}
+
+func LoadFile(path string) string {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		panic(err)
+	}
+
+	return string(data)
 }
