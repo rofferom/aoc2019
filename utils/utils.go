@@ -14,6 +14,27 @@ func AssertEq(a, b int) {
 	}
 }
 
+func AssertIntArrayEq(a []int, b []int) bool {
+	if len(a) != len(b) {
+		return false
+	}
+
+	for i, v := range a {
+		if v != b[i] {
+			return false
+		}
+	}
+
+	return true
+}
+
+func CloneIntArray(a []int) []int {
+	b := make([]int, len(a))
+	copy(b, a)
+
+	return b
+}
+
 func LoadIntFile(path string) []int {
 	file, err := os.Open(path)
 	if err != nil {
