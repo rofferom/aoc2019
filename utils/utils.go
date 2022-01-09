@@ -14,6 +14,12 @@ func AssertEq(a, b int) {
 	}
 }
 
+func AssertNeq(a, b int) {
+	if a == b {
+		panic(fmt.Sprintf("%d == %d", a, b))
+	}
+}
+
 func AssertIntArrayEq(a []int, b []int) bool {
 	if len(a) != len(b) {
 		return false
